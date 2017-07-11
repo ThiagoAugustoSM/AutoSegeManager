@@ -1,0 +1,26 @@
+{
+    "alunos": [
+        {
+            "nome": "Thiago Augusto dos Santos Martins",
+            "id": "00000001",
+            "genero":"M",
+            "dataNascimento": "12/3/1998",
+            "dataMatricula":"2/2/2017",
+            "turma":"2/2017",
+            "status": {
+              "avaliacaoMedica":true,
+              "aulaTeorica":true,
+              "provaTeorica":true,
+              "aulaPratica":true,
+              "provaPratica":false,
+              "carteiraProvisoria": false,
+              "carteiraPermanente": false,
+            }
+        },
+        {
+            "nome": "laura",
+            "id": "2",
+            "dataNascimento": "21/07/2003"
+        }
+    ]
+}
