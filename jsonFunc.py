@@ -1,4 +1,5 @@
 import json
+from notificacao import Notificacao
 
 class jsonFunc():
 
@@ -8,15 +9,16 @@ class jsonFunc():
     def adicionarAluno(nome, dataNascimento):
         # Reading data back
         with open('jsonData/alunos.json', 'r') as f:
-             data = json.load(f)
-             data['alunos'].append({'nome': nome,
-                                    'id': str(len(data['alunos']) + 1),
-                                    'dataNascimento': dataNascimento
-                                    })
-             for p in data['alunos']:
-                print('Nome: ' + p['nome'])
-                print('ID: ' + p['id'])
-                print('Data de Nascimento: ' + p['dataNascimento'])
+            data = json.load(f)
+            data['alunos'].append({'nome': str(nome),
+                                'id': str(len(data['alunos']) + 1),
+                                'dataNascimento': str(dataNascimento)
+                                })
+            for alunos in data['alunos']:
+                print('Nome: ' + alunos['nome'])
+                print('ID: ' + alunos['id'])
+                print('Data de Nascimento: ' + alunos['dataNascimento'])
+                print(Notificacao.days_between(alunos['dataNascimento']))
                 print('')
         # Writing JSON data
         with open('jsonData/alunos.json', 'w') as f:

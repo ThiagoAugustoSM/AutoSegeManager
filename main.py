@@ -1,4 +1,3 @@
-import json
 import time
 from datetime import datetime
 from usuarios import Aluno, Instrutor
@@ -10,19 +9,13 @@ instrutor = Instrutor('Raquel', '21/06/1985')
 state = 0 #variavel para o controle da maquina de estados
 
 #Funcao dias entre duas datas
-def days_between(d1):
-    dataAtual = datetime.now()
-    d1 = datetime.strptime(d1, "%d/%m/%Y")
-    print(d1.year)
-    print (abs((dataAtual - d1).days))
 
-days_between("12/3/1998")
 
 while True:
-    state = int(input("Digite o valor do estado:"))
+    #state = int(input("Digite o valor do estado:"))
     if(state == 0):
-        nome = input("digite um nome")
-        data = input("digite uma data")
+        nome = (input("Digite o seu nome completo: "))
+        data = Aluno.validaData()
         state = jsonFunc.adicionarAluno(nome, data)
     elif(state == 1):
         state = adicionarInstrutor()

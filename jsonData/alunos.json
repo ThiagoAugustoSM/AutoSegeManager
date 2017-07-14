@@ -3,24 +3,40 @@
         {
             "nome": "Thiago Augusto dos Santos Martins",
             "id": "00000001",
-            "genero":"M",
+            "genero": "M",
             "dataNascimento": "12/3/1998",
-            "dataMatricula":"2/2/2017",
-            "turma":"2/2017",
-            "status": {
-              "avaliacaoMedica":true,
-              "aulaTeorica":true,
-              "provaTeorica":true,
-              "aulaPratica":true,
-              "provaPratica":false,
-              "carteiraProvisoria": false,
-              "carteiraPermanente": false,
-            }
+            "dataMatricula": "2/2/2017",
+            "turma": "2/2017"
         },
         {
             "nome": "laura",
             "id": "2",
             "dataNascimento": "21/07/2003"
+        },
+        {
+            "nome": "Edjane dos Santos de Oliveira",
+            "id": "3",
+            "dataNascimento": "18/07/1972"
+        },
+        {
+            "nome": "asdhuas",
+            "id": "6",
+            "dataNascimento": "12/12/2012"
+        },
+        {
+            "nome": "asdasid",
+            "id": "7",
+            "dataNascimento": "12/12/2012"
+        },
+        {
+            "nome": "thiaguinho",
+            "id": "6",
+            "dataNascimento": "12/12/2012"
+        },
+        {
+            "nome": "thiaguinho",
+            "id": "7",
+            "dataNascimento": "12/12/2012"
         }
     ]
 }
