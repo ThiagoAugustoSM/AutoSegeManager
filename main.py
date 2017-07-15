@@ -7,17 +7,19 @@ aluno = Aluno('Thiago', '12/03/98')
 instrutor = Instrutor('Raquel', '21/06/1985')
 
 state = 0 #variavel para o controle da maquina de estados
+jsonFunc.notificacaoAluno(7)
 
 while True:
     #state = int(input("Digite o valor do estado:"))
     if(state == 0):
+        print("-----------------ADICIONAR ALUNO------------------")
         nome = (input("Digite o seu nome completo: "))
         data = Aluno.validaData()
         state = jsonFunc.adicionarAluno(nome, data)
     elif(state == 1):
         state = adicionarInstrutor()
     elif(state == 2):
-        pass
+        state = jsonFunc.notificacaoAluno(7)
     elif(state == 3):
         pass
     elif(state == 4):

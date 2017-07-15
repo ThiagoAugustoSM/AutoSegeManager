@@ -59,11 +59,11 @@ class jsonFunc():
         return 8
 
     def notificacaoAluno(quantidadeDias):
-    	
+
         with open('jsonData/alunos.json', 'r') as f:
             data = json.load(f)
             for aluno in data['alunos']:
-              	if(0 <= days_between(aluno['dataNascimento']) <= quantidadeDias):
-                    print(Notificacao.printDiasAniversario(aluno['nome'], days_between(aluno['dataNascimento']))
-
+              	if(-quantidadeDias <= Notificacao.days_between(aluno['dataNascimento']) <= quantidadeDias):
+                    print(aluno['nome'])
+                    Notificacao.printDiasAniversario(aluno['nome'], Notificacao.days_between(aluno['dataNascimento']), aluno['dataNascimento'])
         return 8
