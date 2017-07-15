@@ -8,9 +8,6 @@ instrutor = Instrutor('Raquel', '21/06/1985')
 
 state = 0 #variavel para o controle da maquina de estados
 
-#Funcao dias entre duas datas
-
-
 while True:
     #state = int(input("Digite o valor do estado:"))
     if(state == 0):
