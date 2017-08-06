@@ -22,3 +22,13 @@ class Notificacao():
         elif(num > 0):
             print("Faltam" , num ," dias para o aniversário de", nome,
                     "\nData Aniversário:", dataAniversario, "de", nome)
+
+    def retornaDiasAniversario(nome, num, dataAniversario):
+        if(num < 0):
+            return str("Já se passaram " + str(-num) +" dias para o aniversário de "+ nome +
+                    "\nData Aniversário: "+ dataAniversario+ " de "+ nome)
+        elif(num == 0):
+            return("O aniversário de", nome, " é hoje!")
+        elif(num > 0):
+            return str("Faltam " + str(num) +" dias para o aniversário de "+ nome +
+                    "\nData Aniversário: " + dataAniversario + " de "+ nome)
