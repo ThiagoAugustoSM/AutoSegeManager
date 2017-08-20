@@ -4,11 +4,12 @@ from notificacao import Notificacao
 class jsonFunc():
 
     def __init__(self):
+        self.path = '../data/jsonData/alunos.json' 
         pass
 
-    def adicionarAluno(nome, dataNascimento):
+    def adicionarAluno(self, nome, dataNascimento):
         # Reading data back
-        with open('jsonData/alunos.json', 'r') as f:
+        with open(self.path, 'r') as f:
             data = json.load(f)
             data['alunos'].append({'nome': str(nome),
                                 'id': str(len(data['alunos']) + 1),
@@ -21,13 +22,13 @@ class jsonFunc():
                 print(Notificacao.days_between(alunos['dataNascimento']))
                 print('')
         # Writing JSON data
-        with open('jsonData/alunos.json', 'w') as f:
+        with open(self.path, 'w') as f:
              json.dump(data, f, indent=4)
         return 4
 
-    def adicionarInstrutor(nome, dataNascimento):
+    def adicionarInstrutor(self, nome, dataNascimento):
         # Reading data back
-        with open('jsonData/funcionarios.json', 'r') as f:
+        with open(self.path, 'r') as f:
             data = json.load(f)
             data['alunos'].append({'nome': str(nome),
                                 'id': str(len(data['alunos']) + 1),
@@ -40,27 +41,27 @@ class jsonFunc():
                 print(Notificacao.days_between(alunos['dataNascimento']))
                 print('')
         # Writing JSON data
-        with open('jsonData/alunos.json', 'w') as f:
+        with open(self.path, 'w') as f:
              json.dump(data, f, indent=4)
         return 4
 
-    def pesquisarAluno(nome):
+    def pesquisarAluno(self, nome):
 
-        with open('jsonData/alunos.json', 'r') as f:
+        with open(self.path, 'r') as f:
             data = json.load(f)
             for aluno in data['alunos']:
-                print(aluno['nome'])
+                #print(aluno['nome'])
                 if(aluno['nome'] == nome):
                     print('Nome: ' + aluno['nome'])
                     print('ID: ' + aluno['id'])
                     print('Data de Nascimento: ' + aluno['dataNascimento'])
                     print('')
-                    break
+                    return [aluno['nome'], aluno['id'], aluno['dataNascimento']]
         return 8
 
-    def notificacaoAluno(quantidadeDias):
+    def notificacaoAluno(self, quantidadeDias):
 
-        with open('jsonData/alunos.json', 'r') as f:
+        with open(self.path, 'r') as f:
             data = json.load(f)
             for aluno in data['alunos']:
               	if(-quantidadeDias <= Notificacao.days_between(aluno['dataNascimento']) <= quantidadeDias):
@@ -68,9 +69,9 @@ class jsonFunc():
                     Notificacao.printDiasAniversario(aluno['nome'], Notificacao.days_between(aluno['dataNascimento']), aluno['dataNascimento'])
         return 8
 
-    def retornoNotificacaoAluno(quantidadeDias):
+    def retornoNotificacaoAluno(self, quantidadeDias):
         listaAlunos = []
-        with open('jsonData/alunos.json', 'r') as f:
+        with open(self.path, 'r') as f:
             data = json.load(f)
             for aluno in data['alunos']:
               	if(-quantidadeDias <= Notificacao.days_between(aluno['dataNascimento']) <= quantidadeDias):

@@ -8,6 +8,7 @@ class Notificacao():
     def days_between(dataAniversario):
         dataAtual = datetime.now()
         data = dataAniversario.split('/')
+        print(data)
         data[2] = str(dataAtual.year)
         dataAniversario = data[0] + '/' + data[1] + '/' + data[2]
         dataAniversario = datetime.strptime(dataAniversario, "%d/%m/%Y")
